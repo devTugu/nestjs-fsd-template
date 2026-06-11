@@ -2,6 +2,10 @@
 /dist
 /node_modules
 /build
+*.tsbuildinfo
+data-source.js
+data-source.js.map
+data-source.d.ts
 
 # Logs
 logs

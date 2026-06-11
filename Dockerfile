@@ -6,7 +6,7 @@ COPY package*.json ./
 RUN npm ci --ignore-scripts
 
 COPY . .
-RUN npm run build
+RUN rm -f tsconfig.build.tsbuildinfo tsconfig.build.test.tsbuildinfo && npm run build
 
 FROM node:22-alpine AS production
 
