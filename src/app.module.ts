@@ -27,6 +27,10 @@ import { AuthorizationPresentationModule } from '@presentation/http/modules/auth
       isGlobal: true,
       envFilePath: '.env',
       validationSchema: envValidationSchema,
+      validationOptions: {
+        convert: true,
+        abortEarly: false,
+      },
     }),
     ThrottlerModule.forRootAsync({
       inject: [ConfigService],

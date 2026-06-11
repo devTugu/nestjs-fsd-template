@@ -68,7 +68,9 @@ async function bootstrap() {
     });
   }
 
-  const port = configService.get<number>('APP_PORT', 3000);
+  const port = Number(
+    process.env.PORT ?? configService.get<number>('APP_PORT', 3000),
+  );
   await app.listen(port);
   logger.log(
     `Application running on http://localhost:${port}/api/v1`,
